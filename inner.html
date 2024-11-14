@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Table with Chart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <table id="dataTable">
+            <thead>
+                <tr>
+                    <th class="th_one">Показатель</th>
+                    <th class="th_two">Текущий день</th>
+                    <th class="thd_three">Вчера</th>
+                    <th class="th_four">В этот день недели</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Данные будут добавлены через JavaScript -->
+            </tbody>
+        </table>
+        <div id="chartContainer" style="height: 400px; width: 100%;"></div>
+    </div>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

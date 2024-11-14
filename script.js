@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <span class="percent-change">${percentChangeText}</span>
             </td>
         `;
-
-        // Определяем класс для ячейки "В этот день недели"
+        
         const thisWeekCellClass = getThisWeekCellClass(index);
         const thisWeekCell = `
             <td class="th_four ${thisWeekCellClass}">${item.вЭтотДеньНедели.toLocaleString('ru-RU')}</td>
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function() {
         tableBody.appendChild(chartContainer);
     });
 
-    // Функция для отображения/скрытия графика
     function toggleChart(index, container) {
         const item = data[index];
         const chartContainer = document.getElementById(`chartContainer${index}`);
@@ -80,15 +78,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 yAxis: {
                     labels: {
-                        enabled: false // Скрываем значения на оси Y
+                        enabled: false
                     },
                     title: {
-                        text: '' // Скрываем заголовок оси Y
+                        text: '' 
                     },
                     gridLineWidth: 0
                 },
                 legend: {
-                    enabled: false // Скрываем легенду
+                    enabled: false 
                 },
                 series: [{
                     data: [item.текущийДень, item.вчера, item.вЭтотДеньНедели]
@@ -99,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Функция для определения класса ячейки "В этот день недели"
     function getThisWeekCellClass(index) {
         if (index === 0) return 'red';
         if (index >= 4 && index <= 7) return 'green';
